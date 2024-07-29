@@ -169,7 +169,7 @@ app.get('/api/data', async (req, res) => {
     res.status(200).json(rows);
   } catch (error) {
     console.error('Error fetching data:', error);
-    res.status(500).json({ error: 'Error fetching data' });
+    res.status(500).json({ error: 'Error fetching dataa' });
   }
 });
 
