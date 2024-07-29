@@ -129,9 +129,9 @@ app.use(express.json());
 
 const pool = mysql.createPool({
   host: 'localhost',
-  user: 'mina',
-  password: '12345',
-  database: 'mina_cli',
+  user: 'minaa',
+  password: 'Mina123',
+  database: 'mina_ecr',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
