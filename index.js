@@ -128,10 +128,11 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: 'localhost',
+  host: '',
   user: 'minaa',
   password: 'Mina123',
   database: 'mina_ecr',
+  port: 3306,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
