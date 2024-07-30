@@ -128,7 +128,7 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: '',
+  host: 'localhost',
   user: 'minaa',
   password: 'Mina123',
   database: 'mina_ecr',
@@ -138,7 +138,7 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-app.post('/api/data', async (req, res) => {
+app.post('/', async (req, res) => {
   const { name, description } = req.body;
   try {
     const connection = await pool.getConnection();
@@ -154,7 +154,7 @@ app.post('/api/data', async (req, res) => {
   }
 });
 
-app.get('/api/data', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const connection = await pool.getConnection();
     const [rows] = await connection.query('SELECT * FROM data');
