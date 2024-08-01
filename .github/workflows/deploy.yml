@@ -29,15 +29,15 @@ jobs:
  
       - name: Build Docker image
         run: |
-          docker build -t mina-back-dev .
+          sudo docker build -t mina-front-dev .
  
       - name: Tag Docker image
         run: |
-          docker tag mina-back-dev:latest 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-back-dev:${{ github.ref_name }}-latest
+          sudo docker tag mina-front-dev:latest 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-front-dev:${{ github.ref_name }}-latest
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-back-dev:${{ github.ref_name }}-latest
+          sudo docker push 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-front-dev:${{ github.ref_name }}-latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,3 +63,5 @@ jobs:
             elif [ "${{ github.ref_name }}" == "dev" ]; then
               sh deploy-dev.sh
             fi
+  
+
