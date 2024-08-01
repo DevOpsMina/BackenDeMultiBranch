@@ -167,7 +167,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello, Welcome to my backend server hihihi!');
+  res.send('Hello, Welcome to my backend server, Enjoy!');
 });
 
 app.listen(port, () => {
