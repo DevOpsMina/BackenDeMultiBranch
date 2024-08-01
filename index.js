@@ -147,7 +147,7 @@ app.post('/', async (req, res) => {
       [name, description]
     );
     connection.release();
-    res.status(201).json({ message: 'Data added successfully,hehe' });
+    res.status(201).json({ message: 'Data added successfully,hehe,haha' });
   } catch (error) {
     console.error('Error inserting data:', error);
     res.status(500).json({ error: 'Error inserting dataa' });
