@@ -195,7 +195,7 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-app.post('/data', async (req, res) => {
+app.post('/', async (req, res) => {
   const { name, description } = req.body;
   try {
     const connection = await pool.getConnection();
@@ -211,7 +211,7 @@ app.post('/data', async (req, res) => {
   }
 });
 
-app.get('/data', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const connection = await pool.getConnection();
     const [rows] = await connection.query('SELECT * FROM data');
